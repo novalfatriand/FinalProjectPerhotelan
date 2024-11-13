@@ -1,0 +1,20 @@
+[
+  {
+    "name": "noval fatriand",
+    "checkin": "2024-11-14",
+    "checkout": "2024-11-15",
+    "roomtype": "Suite Room"
+  },
+  {
+    "name": "ranggafalih",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-24",
+    "roomtype": "Single Room"
+  },
+  {
+    "name": "sultan zakki",
+    "checkin": "2024-11-28",
+    "checkout": "2024-11-29",
+    "roomtype": "Luxury Room"
+  }
+]

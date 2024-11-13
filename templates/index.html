@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kempinski Hotel</title>
+    <!-- CSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Add Icon URL Bar -->
+    <link rel="icon" href="../static/NginepYukLogo.png" type="image/icon type">
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter+Tight'],
+                        montserrat: ['Montserrat'],
+                        poppins: ['Poppins'],
+                        roboto: ['Roboto'],
+                        quicksand: ['Quicksand'],
+                        cormorant: ['Cormorant']
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+ 
+<body class="bg-white">
+    <!-- Navbar Start -->
+    <nav class="bg-white border-gray-200 shadow-lg font-poppins">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-5">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <h1 class="text-3xl text-[#45bb8e] font-cormorant font-extrabold mt-2 mb-2">Kempinski.</h1>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="md:mr-5 hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-light p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-[#45bb8e] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Home</a>
+                    </li>
+                    <li>
+                        <a href="#room-type" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Room Type</a>
+                    </li>
+                    <li>
+                        <a href="/booking" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Booking</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Section Start -->
+    <section id="home" class="bg-white font-poppins -mt-20 md:my-20 px-4 md:px-0">
+        <div class="mx-auto flex flex-col items-center bg-white md:flex-row md:max-w-6xl">
+            
+            <div class="flex flex-col justify-between p-8 leading-normal">
+                <h1 class="text-[45px] text-black font-bold">Dapatkan Pengalaman <span class="text-[#45bb8e]">Penginapan</span> Yang Menyenangkan</h1>
+                <p class="mt-5 text-gray-800">5 Star Luxury Hotel in Bali, Indonesia.</p>
+            </div>
+            <img class="mr-10 object-cover w-full rounded-xl h-full md:h-max md:w-[40%] shadow-lg" src="../static/apurvakempinski.jfif" alt="About Image">
+        </div>        
+        <div class="flex justify-end">
+            <div class="bg-white w-72 h-44 mr-20 -mt-36 rounded-xl shadow-2xl p-5 border border-gray-200">
+                <h1 class="text-black text-2xl font-bold font-cormorant">Apurva Hotel, Bali</h1>
+                <p class="text-black text-sm mt-1">Paket penginapan ke Bali cuma sejuta, ambil promo sekarang!</p>
+                <div class="flex flew-row mt-4 justify-between">
+                    <h1 class="text-orange-600 animate-pulse text-lg font-semibold mt-[11px]">IDR 1.999.999</h1>
+                    <button class="btn btn-active btn-neutral w-28 text-white rounded-3xl">Ambil</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    
+    <!-- Hotel Section Start -->
+    <section id="room-type" class="font-poppins bg-white">
+        <div class="ml-3 px-20">
+            <p class="text-[#45bb8e] mb-2 font-semibold text-xl">Our Recommended</p>
+            <h1 class="text-black text-3xl font-bold">Liburan dengan nyaman 🚀</h1>
+            <p class="text-gray-600 font-normal mt-3 text-base">Kami menyediakan berbagai tipe ruangan, yuk tentukan pilihan kamu!</p>
+        </div>
+        <div class="bg-white mt-7 px-20">
+            <div class="carousel mb-10 flex justify-around flex-wrap">
+                <div class="carousel-item mr-5 mt-2">
+                    <img class="hidden" src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" alt="Burger" />
+                    <div class="w-64 h-[350px] bg-white rounded-xl shadow-xl">
+                        <img class="h-40 w-64 rounded-t-xl" src="../static/Andaz Bali by Hyatt.jfif" alt="Hotel Thumbnail" />
+                        <div class="pt-3 pl-5">
+                            <h1 class="text-black font-bold">Single Room</h1>
+                            <p class="text-black text-sm mt-2">The Apurva Kempinski, Bali</p>
+                            <p class="text-gray-700 text-sm mt-1"><span class="text-black">9,3</span>/10 (1.278 Review)</p>
+                            <h1 class="text-orange-600 font-bold text-lg mt-5">IDR 438.000</h1>
+                            <button class="btn btn-sm btn-outline btn-success rounded-full text-sm h-7 mt-1" href="/booking">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item mr-5 mt-2">
+                  <img class="hidden" src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp" alt="Burger" />
+                    <div class="w-64 h-[350px] bg-white rounded-xl shadow-xl">
+                        <img class="h-40 w-64 rounded-t-xl" src="../static/Villa Seminyak.jfif" alt="Hotel Thumbnail" />
+                        <div class="pt-3 pl-5">
+                            <h1 class="text-black font-bold">Double Room</h1>
+                            <p class="text-black text-sm mt-2">The Apurva Kempinski, Bali</p>
+                            <p class="text-gray-700 text-sm mt-1"><span class="text-black">8,7</span>/10 (1.087 Review)</p>
+                            <h1 class="text-orange-600 font-bold text-lg mt-5">IDR 660.000</h1>
+                            <button class="btn btn-sm btn-outline btn-success rounded-full text-sm h-7 mt-1" href="/booking">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item mr-5 mt-2">
+                  <img class="hidden" src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp" alt="Burger" />
+                    <div class="w-64 h-[350px] bg-white rounded-xl shadow-xl">
+                        <img class="h-40 w-64 rounded-t-xl" src="../static/Inara Alas Harum.jfif" alt="Hotel Thumbnail" />
+                        <div class="pt-3 pl-5">
+                            <h1 class="text-black font-bold">Suite Room</h1>
+                            <p class="text-black text-sm mt-2">The Apurva Kempinski, Bali</p>
+                            <p class="text-gray-700 text-sm mt-1"><span class="text-black">9,5</span>/10 (2.340 Review)</p>
+                            <h1 class="text-orange-600 font-bold text-lg mt-5">IDR 971.000</h1>
+                            <button class="btn btn-sm btn-outline btn-success rounded-full text-sm h-7 mt-1" href="/booking">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item mr-5 mt-2">
+                  <img class="hidden" src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp" alt="Burger" />
+                    <div class="w-64 h-[350px] bg-white rounded-xl shadow-xl">
+                        <img class="h-40 w-64 rounded-t-xl" src="../static/theWinaVilla.jfif" alt="Hotel Thumbnail" />
+                        <div class="pt-3 pl-5">
+                            <h1 class="text-black font-bold">Luxury Room</h1>
+                            <p class="text-black text-sm mt-2">The Apurva Kempinski, Bali</p>
+                            <p class="text-gray-700 text-sm mt-1"><span class="text-black">9,8</span>/10 (889 Review)</p>
+                            <h1 class="text-orange-600 font-bold text-lg mt-5">IDR 1.204.000</h1>
+                            <button class="btn btn-sm btn-outline btn-success rounded-full text-sm h-7 mt-1" href="/booking">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <!-- Hotel Section End -->
+
+
+    <!-- Contact Section Start -->
+        <section id="contact" class="bg-white font-poppins mt-10 md:mt-9 mb-20 md:mb-16 mx-auto">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+                <div class="mx-auto mb-5 max-w-screen-sm lg:mb-10">
+                    <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900 font-cormorant">Let's talk.</h2>
+                    <p class="font-light text-gray-500 sm:text-lg">Feel free to contact with us any time.</p>
+                </div> 
+                <div class="gap-8 grid md:gap-0 sm:grid-cols-2 md:grid-cols-2">
+                    <div class="text-center text-gray-500 md:ml-32">
+                        <img class="mx-auto mb-3 w-20 h-20 md:w-36 md:h-36 rounded-full" src="../static/icon-phone.png" alt="Phone">
+                        <h3 class="text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="https://wa.me/+6285190060033">Phone Number</a>
+                        </h3>
+                        <p class="mt-2">(+62) 361 209 2288</p>
+                    </div>
+                    <div class="text-center text-gray-500 md:-ml-28">
+                        <img class="mx-auto mb-3 w-20 h-20 md:w-36 md:h-36 rounded-full" src="../static/icon-mail.png" alt="Mail">
+                        <h3 class="text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="mailto: tristar.wd@gmail.com">Mail Address</a>
+                        </h3>
+                        <p class="mt-2">info.bali@kempinski.com</p>
+                    </div>
+                </div>  
+            </div>
+        </section>
+    <!-- Contact Section End -->
+
+    <section class="bg-white w-full h-2">
+
+    </section>
+</body>
+</html>
