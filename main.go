@@ -22,7 +22,6 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	// Load existing bookings from JSON file
 	loadBookings()
 
 	http.HandleFunc("/", HomePage)
@@ -101,7 +100,6 @@ func HandleBooking(w http.ResponseWriter, r *http.Request) {
 		}
 		bookings = append(bookings, booking)
 
-		// Save updated bookings to JSON file
 		saveBookings()
 
 		http.Redirect(w, r, "/booking", http.StatusSeeOther)

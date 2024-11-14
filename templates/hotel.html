@@ -112,18 +112,18 @@
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead class="text-xs text-gray-700 uppercase">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50">Name</th>
+                                    <th scope="col" class="px-6 py-3">Name</th>
                                     <th scope="col" class="px-6 py-3">Room Type</th>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50">Check In</th>
+                                    <th scope="col" class="px-6 py-3">Check In</th>
                                     <th scope="col" class="px-6 py-3">Check Out</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{ range . }}
                                 <tr class="border-b border-gray-200">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 capitalize">{{ .Name }}</th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap capitalize">{{ .Name }}</th>
                                     <td class="px-6 py-4">{{ .RoomType }}</td>
-                                    <td class="px-6 py-4 bg-gray-50">{{ .CheckIn }}</td>
+                                    <td class="px-6 py-4">{{ .CheckIn }}</td>
                                     <td class="px-6 py-4">{{ .CheckOut }}</td>
                                 </tr>
                                 {{ end }}
