@@ -16,5 +16,11 @@
     "checkin": "2024-11-28",
     "checkout": "2024-11-29",
     "roomtype": "Luxury Room"
+  },
+  {
+    "name": "artemizy sharon",
+    "checkin": "2024-12-01",
+    "checkout": "2024-12-02",
+    "roomtype": "Suite Room"
   }
 ]
