@@ -2,18 +2,22 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
+	"time"
 )
 
 type Booking struct {
-	Name     string `json:"name"`
-	CheckIn  string `json:"checkin"`
-	CheckOut string `json:"checkout"`
-	RoomType string `json:"roomtype"`
+	Name      string `json:"name"`
+	CheckIn   string `json:"checkin"`
+	CheckOut  string `json:"checkout"`
+	RoomType  string `json:"roomtype"`
+	BookingID string `json:"booking_id"`
 }
 
 var bookings []Booking
@@ -90,13 +94,19 @@ func saveBookings() {
 	}
 }
 
+func generateBookingID() string {
+	rand.Seed(time.Now().UnixNano()) // Seed untuk memastikan angka acak berbeda setiap kali dijalankan
+	return fmt.Sprintf("%07d", rand.Intn(100000))
+}
+
 func HandleBooking(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		booking := Booking{
-			Name:     r.FormValue("name"),
-			CheckIn:  r.FormValue("checkin"),
-			CheckOut: r.FormValue("checkout"),
-			RoomType: r.FormValue("roomtype"),
+			Name:      r.FormValue("name"),
+			CheckIn:   r.FormValue("checkin"),
+			CheckOut:  r.FormValue("checkout"),
+			RoomType:  r.FormValue("roomtype"),
+			BookingID: generateBookingID(),
 		}
 		bookings = append(bookings, booking)
 

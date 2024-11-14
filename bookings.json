@@ -3,24 +3,14 @@
     "name": "noval fatriand",
     "checkin": "2024-11-14",
     "checkout": "2024-11-15",
-    "roomtype": "Suite Room"
+    "roomtype": "Suite Room",
+    "booking_id": "0093877"
   },
   {
-    "name": "ranggafalih",
-    "checkin": "2024-11-21",
-    "checkout": "2024-11-24",
-    "roomtype": "Single Room"
-  },
-  {
-    "name": "sultan zakki",
-    "checkin": "2024-11-28",
-    "checkout": "2024-11-29",
-    "roomtype": "Luxury Room"
-  },
-  {
-    "name": "artemizy sharon",
-    "checkin": "2024-12-01",
-    "checkout": "2024-12-02",
-    "roomtype": "Suite Room"
+    "name": "ranggafalih arsyanda",
+    "checkin": "2024-11-17",
+    "checkout": "2024-11-19",
+    "roomtype": "Suite Room",
+    "booking_id": "0031298"
   }
 ]
