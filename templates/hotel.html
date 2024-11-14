@@ -32,81 +32,105 @@
 </head>
 
 <body class="font-poppins">
-  <nav class="bg-white border-gray-200 shadow-lg font-poppins">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-5">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <h1 class="text-3xl text-[#45bb8e] font-cormorant font-extrabold mt-2 mb-2">Kempinski.</h1>
-        </a>
-        <button data-collapse-toggle="navbar-dropdown" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-dropdown" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-        </button>
-        <div class="md:mr-5 hidden w-full md:block md:w-auto" id="navbar-dropdown">
-            <ul
-                class="flex flex-col font-light p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-                <li>
-                    <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Home</a>
-                </li>
-                <li>
-                    <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Room Type</a>
-                </li>
-                <li>
-                    <a href="/booking" class="block py-2 px-3 text-[#45bb8e] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Booking</a>
-                </li>
-                <li>
-                    <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Contact</a>
-                </li>
-            </ul>
+
+    <nav class="bg-white border-gray-200 shadow-lg font-poppins">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-5">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <h1 class="text-3xl text-[#45bb8e] font-cormorant font-extrabold mt-2 mb-2">Kempinski.</h1>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="md:mr-5 hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-light p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <li>
+                        <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Home</a>
+                    </li>
+                    <li>
+                        <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Room Type</a>
+                    </li>
+                    <li>
+                        <a href="/booking" class="block py-2 px-3 text-[#45bb8e] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Booking</a>
+                    </li>
+                    <li>
+                        <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#45bb8e] md:p-0">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 <!-- Navbar End -->
 
+    <section class="bg-white font-cormorant">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">The Apurva Kempinski Hotel</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 ">Terimakasih sudah mengunjungi laman website kami, untuk keperluan booking hotel bisa langsung menuju Form Book yang telah kami sediakan.</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <a href="#form-booking" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#45bb8e] hover:bg-[#3ea77e]">
+                    Form Book
+                </a>
+                <a href="#booking-list" class="py-3 px-5 sm:ms-4 text-sm font-medium text-[#3ea77e] focus:outline-none bg-white rounded-lg border border-[#3ea77e] hover:bg-gray-200">
+                    Check Available
+                </a>  
+            </div>
+        </div>
+    </section>
+
+
     <section id ="form">
-        <div class="main-content mt-8">
-            <div class="bg-white p-6 rounded-lg shadow-md max-w-7xl mx-auto mb-1">
-                  <div>
-                    <h2 class="font-bold text-2xl mb-2">Hotel Booking Form</h2>
-                    <p class="text-sm font-normal mb-8">Silahkan isi data diri anda sebelum berkunjung.</p>
-                    <form action="/book" method="POST">
-                        <div class="grid gap-4 my-4">
-                            <div class="flex items-center space-x-4">
-                                <label for="name" class="w-36">Name</label>
-                                <input type="text" name="name" id="name" placeholder="Name" class="border border-gray-300 rounded px-2 py-1 w-64" required>
+        <div class="main-content mt-0">
+            <div class="bg-white py-10 px-14 rounded-lg shadow-md max-w-7xl mx-auto mb-1">
+                <div class="flex flex-row mx-auto">
+                    <div id="form-booking">
+                        <h2 class="font-bold text-3xl mb-2 font-cormorant">Hotel Booking Form</h2>
+                        <p class="text-xl font-normal mb-8 font-cormorant">Silahkan isi data diri anda sebelum berkunjung.</p>
+                        <form action="/book" method="POST">
+                            <div class="grid gap-4 my-4 ml-10">
+                                <div class="flex items-center space-x-4">
+                                    <label for="name" class="w-36 font-light text-sm">Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Name" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <label for="checkin" class="w-36 font-light text-sm">Check-In Date</label>
+                                    <input type="date" name="checkin" id="checkin" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <label for="checkout" class="w-36 font-light text-sm">Check-Out Date</label>
+                                    <input type="date" name="checkout" id="checkout" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <label for="roomtype" class="w-36 font-light text-sm">Room Type</label>
+                                    <select name="roomtype" id="roomtype" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                        <option value="Single Room">Single Room</option>
+                                        <option value="Double Room">Double Room</option>
+                                        <option value="Suite Room">Suite Room</option>
+                                        <option value="Luxury Room">Luxury Room</option>
+                                    </select>
+                                </div>
+                                <div class="mt-2 mb-4">
+                                    <button class="bg-[#45bb8e] hover:bg-[#3ba17a] text-white font-normal py-2 px-4 rounded shadow text-sm" type="submit">
+                                        Confirm Booking
+                                    </button>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-4">
-                                <label for="checkin" class="w-36">Check-In Date</label>
-                                <input type="date" name="checkin" id="checkin" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-64" required>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <label for="checkout" class="w-36">Check-Out Date</label>
-                                <input type="date" name="checkout" id="checkout" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-64 " required>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <label for="roomtype" class="w-36">Room Type</label>
-                                <select name="roomtype" id="roomtype" class="border border-gray-300 rounded px-2 py-1 w-64 " required>
-                                    <option value="Single Room">Single Room</option>
-                                    <option value="Double Room">Double Room</option>
-                                    <option value="Suite Room">Suite Room</option>
-                                    <option value="Luxury Room">Luxury Room</option>
-                                </select>
-                            </div>
-                            <div class="mt-2 mb-4">
-                                <button class="bg-green-600 hover:bg-green-800 text-white font-normal py-2 px-4 rounded shadow text-sm" type="submit">
-                                    Confirm Booking
-                                </button>
-                            </div>
+                        </form>
                         </div>
-                    </form>
+    
+                        <div class="ml-20 mt-9">
+                            <img src="../static/heroSection.jpg" class="w-[400px]" alt="Hero Section">
+                        </div>
                 </div>
 
 
-                 <div class="mt-6">
-                    <h2 class="font-bold text-2xl mb-8">Booking List</h2>
+
+                 <div class="mt-6" id="booking-list">
+                    <h2 class="font-bold text-3xl font-cormorant mb-8">Booking List</h2>
                     {{ if . }}
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-100">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -133,7 +157,6 @@
                     {{ else }}
                     <p>No Bookings Available.</p>
                     {{ end }}
-
                  </div>
               </div>
             </div>
