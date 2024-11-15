@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- SweetAlert CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- Tailwind Config -->
   <script>
       tailwind.config = {
@@ -90,23 +92,27 @@
                     <div id="form-booking">
                         <h2 class="font-bold text-3xl mb-2 font-cormorant">Hotel Booking Form</h2>
                         <p class="text-xl font-normal mb-8 font-cormorant">Silahkan isi data diri anda sebelum berkunjung.</p>
-                        <form action="/book" method="POST">
+                        <form action="/book" method="POST" id="bookingForm">
                             <div class="grid gap-4 my-4 ml-10">
                                 <div class="flex items-center space-x-4">
                                     <label for="name" class="w-36 font-light text-sm">Name</label>
-                                    <input type="text" name="name" id="name" placeholder="Name" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                    <input type="text" name="name" id="name" placeholder="Name" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <label for="email" class="w-36 font-light text-sm">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="example@gmail.com" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <label for="checkin" class="w-36 font-light text-sm">Check-In Date</label>
-                                    <input type="date" name="checkin" id="checkin" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                    <input type="date" name="checkin" id="checkin" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <label for="checkout" class="w-36 font-light text-sm">Check-Out Date</label>
-                                    <input type="date" name="checkout" id="checkout" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                    <input type="date" name="checkout" id="checkout" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <label for="roomtype" class="w-36 font-light text-sm">Room Type</label>
-                                    <select name="roomtype" id="roomtype" class="border border-gray-300 rounded px-2 py-1 w-96 font-light" required>
+                                    <select name="roomtype" id="roomtype" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                         <option value="Single Room">Single Room</option>
                                         <option value="Double Room">Double Room</option>
                                         <option value="Suite Room">Suite Room</option>
@@ -114,7 +120,7 @@
                                     </select>
                                 </div>
                                 <div class="mt-2 mb-4">
-                                    <button class="bg-[#45bb8e] hover:bg-[#3ba17a] text-white font-light py-2 px-4 rounded-lg shadow text-sm" type="submit">
+                                    <button class="bg-[#45bb8e] hover:bg-[#3ba17a] text-white font-light py-3 px-4 rounded-lg shadow text-sm" type="submit">
                                         Confirm Booking
                                     </button>
                                 </div>
@@ -164,5 +170,44 @@
     </section>
 
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('/book', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => {
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'Booking Successful!',
+                        text: 'Check your email for Booking information.',
+                        icon: 'success',
+                    }).then(() => {
+                        window.location.href = '/booking';
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Booking Failed',
+                        text: 'There was an issue with your booking. Please try again.',
+                        icon: 'error',
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Something went wrong. Please try again later.',
+                    icon: 'warning',
+                });
+                console.error('Error:', error);
+            });
+    });
+  </script>
+
 </body>
 </html>
