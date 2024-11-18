@@ -143,7 +143,7 @@ func HandleBooking(w http.ResponseWriter, r *http.Request) {
 			"\nCheck-in: " + booking.CheckIn + "\nCheck-out: " + booking.CheckOut +
 			"\nRoom Type: " + booking.RoomType + "\n\nThank you for choosing our service!"
 
-		err := sendEmail(booking.Email, subject, body) // Ganti dengan email pengguna
+		err := sendEmail(booking.Email, subject, body)
 		if err != nil {
 			log.Printf("Failed to send email: %v", err)
 		} else {

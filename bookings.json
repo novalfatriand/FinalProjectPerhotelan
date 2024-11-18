@@ -54,5 +54,13 @@
     "roomtype": "Single Room",
     "email": "voxytrixrrr@gmail.com",
     "booking_id": "0088226"
+  },
+  {
+    "name": "artemizy sharon",
+    "checkin": "2024-11-15",
+    "checkout": "2024-11-16",
+    "roomtype": "Luxury Room",
+    "email": "voxytrixrrr@gmail.com",
+    "booking_id": "0018136"
   }
 ]

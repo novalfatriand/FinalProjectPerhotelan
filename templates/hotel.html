@@ -95,21 +95,25 @@
                         <form action="/book" method="POST" id="bookingForm">
                             <div class="grid gap-4 my-4 ml-10">
                                 <div class="flex items-center space-x-4">
-                                    <label for="name" class="w-36 font-light text-sm">Name</label>
-                                    <input type="text" name="name" id="name" placeholder="Name" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
+                                    <label for="name" class="w-36 font-light text-sm">Nama</label>
+                                    <input type="text" name="name" id="name" placeholder="Nama" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <label for="email" class="w-36 font-light text-sm">Email</label>
                                     <input type="email" name="email" id="email" placeholder="example@gmail.com" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <label for="checkin" class="w-36 font-light text-sm">Check-In Date</label>
+                                    <label for="checkin" class="w-36 font-light text-sm">Tanggal Check-In</label>
                                     <input type="date" name="checkin" id="checkin" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <label for="checkout" class="w-36 font-light text-sm">Check-Out Date</label>
+                                    <label for="checkout" class="w-36 font-light text-sm">Tanggal Check-Out</label>
                                     <input type="date" name="checkout" id="checkout" placeholder="mm/dd/yyyy" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
                                 </div>
+                                <div class="flex items-center space-x-4">
+                                    <label for="total-nights" class="w-36 font-light text-sm">Total Malam</label>
+                                    <input type="text" id="total-nights" class="border border-gray-300 rounded px-2 py-2 w-96 font-light bg-gray-100" readonly>
+                                </div>                                
                                 <div class="flex items-center space-x-4">
                                     <label for="roomtype" class="w-36 font-light text-sm">Room Type</label>
                                     <select name="roomtype" id="roomtype" class="border border-gray-300 rounded px-2 py-2 w-96 font-light" required>
@@ -127,7 +131,7 @@
                             </div>
                         </form>
                         </div>
-                        <div class="ml-20 mt-9">
+                        <div class="ml-20 mt-28">
                             <img src="../static/heroSection.jpg" class="w-[400px]" alt="Hero Section">
                         </div>
                 </div>
@@ -172,6 +176,37 @@
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0]; 
+        
+        document.getElementById('checkin').setAttribute('min', formattedDate);
+        document.getElementById('checkout').setAttribute('min', formattedDate);
+
+        document.getElementById('checkin').addEventListener('change', function () {
+            const checkinDate = document.getElementById('checkin').value;
+            document.getElementById('checkout').setAttribute('min', checkinDate);
+        });
+    });
+
+
+    document.getElementById('checkin').addEventListener('change', calculateNights);
+    document.getElementById('checkout').addEventListener('change', calculateNights);
+
+    function calculateNights() {
+        const checkinDate = new Date(document.getElementById('checkin').value);
+        const checkoutDate = new Date(document.getElementById('checkout').value);
+
+        if (!isNaN(checkinDate) && !isNaN(checkoutDate) && checkoutDate > checkinDate) {
+            const timeDifference = checkoutDate - checkinDate;
+            const totalNights = timeDifference / (1000 * 60 * 60 * 24);
+            document.getElementById('total-nights').value = `${totalNights} Malam`;
+        } else {
+            document.getElementById('total-nights').value = '';
+        }
+    };
+
+
     document.getElementById('bookingForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -184,8 +219,8 @@
             .then(response => {
                 if (response.ok) {
                     Swal.fire({
-                        title: 'Booking Successful!',
-                        text: 'Check your email for Booking information.',
+                        title: 'Booking Sukses!',
+                        text: 'Check email anda untuk informasi Booking.',
                         icon: 'success',
                     }).then(() => {
                         window.location.href = '/booking';
@@ -193,7 +228,7 @@
                 } else {
                     Swal.fire({
                         title: 'Booking Failed',
-                        text: 'There was an issue with your booking. Please try again.',
+                        text: 'Booking bermasalah. Please try again.',
                         icon: 'error',
                     });
                 }
@@ -201,7 +236,7 @@
             .catch(error => {
                 Swal.fire({
                     title: 'Error',
-                    text: 'Something went wrong. Please try again later.',
+                    text: 'Waduh, sedang bermasalah. Coba lagi nanti.',
                     icon: 'warning',
                 });
                 console.error('Error:', error);
