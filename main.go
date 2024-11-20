@@ -8,7 +8,6 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"net/smtp"
 	"os"
 	"time"
 )
@@ -101,29 +100,6 @@ func generateBookingID() string {
 	return fmt.Sprintf("%07d", rand.Intn(100000))
 }
 
-func sendEmail(to, subject, body string) error {
-	// Konfigurasi server SMTP
-	smtpHost := "smtp.gmail.com"
-	smtpPort := "587"
-	sender := "fatriandn@gmail.com"
-	password := "fatriandN123" // Gunakan App Password jika menggunakan Gmail.
-
-	// Pesan email
-	message := "From: kempinskihotel@gmail.com" + "\r\n" +
-		"To: " + to + "\r\n" +
-		"Subject: " + subject + "\r\n\r\n" +
-		body
-
-	// Kirim email
-	auth := smtp.PlainAuth("", sender, password, smtpHost)
-	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, sender, []string{to}, []byte(message))
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func HandleBooking(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		booking := Booking{
@@ -137,18 +113,6 @@ func HandleBooking(w http.ResponseWriter, r *http.Request) {
 		bookings = append(bookings, booking)
 
 		saveBookings()
-
-		subject := "Booking Confirmation"
-		body := "Dear " + booking.Name + ",\n\nYour booking has been confirmed!\n\nBooking ID: " + booking.BookingID +
-			"\nCheck-in: " + booking.CheckIn + "\nCheck-out: " + booking.CheckOut +
-			"\nRoom Type: " + booking.RoomType + "\n\nThank you for choosing our service!"
-
-		err := sendEmail(booking.Email, subject, body)
-		if err != nil {
-			log.Printf("Failed to send email: %v", err)
-		} else {
-			log.Println("Email sent successfully!")
-		}
 
 		http.Redirect(w, r, "/booking", http.StatusSeeOther)
 		return
