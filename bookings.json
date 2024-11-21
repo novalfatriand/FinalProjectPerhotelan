@@ -6,5 +6,45 @@
     "roomtype": "Suite Room",
     "email": "john@gmail.com",
     "booking_id": "0018131"
+  },
+  {
+    "name": "testing",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-22",
+    "roomtype": "Luxury Room",
+    "email": "testing@gmail.com",
+    "booking_id": "0086702"
+  },
+  {
+    "name": "noval fatriand",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-22",
+    "roomtype": "Double Room",
+    "email": "fatriand@gmail.com",
+    "booking_id": "0090715"
+  },
+  {
+    "name": "ranggafalih arsyanda",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-22",
+    "roomtype": "Double Room",
+    "email": "rangga@gmail.com",
+    "booking_id": "0068307"
+  },
+  {
+    "name": "sultan zakki",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-22",
+    "roomtype": "Luxury Room",
+    "email": "zakki@gmail.com",
+    "booking_id": "0009756"
+  },
+  {
+    "name": "qa tester",
+    "checkin": "2024-11-21",
+    "checkout": "2024-11-22",
+    "roomtype": "Luxury Room",
+    "email": "qa@gmail.com",
+    "booking_id": "0011287"
   }
 ]
