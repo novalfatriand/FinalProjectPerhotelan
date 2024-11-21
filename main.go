@@ -96,7 +96,7 @@ func saveBookings() {
 }
 
 func generateBookingID() string {
-	rand.Seed(time.Now().UnixNano()) // Seed untuk memastikan angka acak berbeda setiap kali dijalankan
+	rand.Seed(time.Now().UnixNano())
 	return fmt.Sprintf("%07d", rand.Intn(100000))
 }
 
